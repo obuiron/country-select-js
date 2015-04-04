@@ -1,7 +1,7 @@
 # Country Select JS
 A jQuery plugin for selecting a country, based on the excellent [International Telephone Input](https://github.com/Bluefieldscom/intl-tel-input.git) plugin. It adds a flag dropdown to any input, which lists all the countries in English and the predominant national language next to their flags.
 
-![alt tag](https://raw.github.com/mrmarkfrench/country-select-js/master/screenshot.png)
+[![alt tag](https://raw.github.com/mrmarkfrench/country-select-js/master/screenshot.png)](http://obuiron.github.io/country-select-js/)
 
 
 ## Table of Contents
@@ -18,7 +18,7 @@ A jQuery plugin for selecting a country, based on the excellent [International T
 
 
 ## Demo
-Try it for yourself using the included demo.html.
+Live demo : http://obuiron.github.io/country-select-js
 
 
 ## Features
@@ -27,14 +27,14 @@ Try it for yourself using the included demo.html.
 * Selecting a country from the dropdown will update the country name in the input
 * Dropdown appears above or below the input depending on available space/scroll position
 * Lots of initialisation options for customisation, as well as public methods for interaction
-* Can optionally update a related field with the two-letter ISO country code on selection
+* Can optionally update a related field with the two-letter ISO and/or three-letter country code on selection
 
 ## Getting Started
-1. Download the [latest version](https://github.com/mrmarkfrench/country-select-js/archive/master.zip)
+1. Download the [latest version](https://github.com/obuiron/country-select-js/archive/master.zip)
 
 2. Link the stylesheet (note that this references the image flags.png)
   ```html
-  <link rel="stylesheet" href="build/css/countrySelect.css">
+  <link rel="stylesheet" href="plugin/css/countrySelect.css">
   ```
 
 3. Add the plugin script and initialise it on your input element
@@ -42,7 +42,7 @@ Try it for yourself using the included demo.html.
   <input type="text" id="country">
   
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="build/js/countrySelect.min.js"></script>
+  <script src="plugin/js/countrySelect.min.js"></script>
   <script>
     $("#country").countrySelect();
   </script>
@@ -54,7 +54,18 @@ Try it for yourself using the included demo.html.
   <input type="hidden" id="country_code" />
   
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="build/js/countrySelect.min.js"></script>
+  <script src="plugin/js/countrySelect.min.js"></script>
+  <script>
+    $("#country").countrySelect();
+  </script>
+  ```
+5. Optional: add an extra input field (with type hidden or text) named the same as your selector input appended with "_long_code". This will automatically be updated with the [ISO 3166-1 alpha-3](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) code for the selected country.
+  ```html
+  <input type="text" id="country" />
+  <input type="hidden" id="country_long_code" />
+  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="plugin/js/countrySelect.min.js"></script>
   <script>
     $("#country").countrySelect();
   </script>
@@ -97,7 +108,8 @@ Returns something like this:
 ```js
 {
   name: "Afghanistan (‫افغانستان‬‎)",
-  iso2: "af",
+  iso2: "af",,
+  iso3: "afg"
 }
 ```
 
@@ -125,6 +137,7 @@ Returns an array of country objects:
 [{
   name: "Afghanistan (‫افغانستان‬‎)",
   iso2: "af",
+  iso3: "afg"
 }, ...]
 ```
 
@@ -165,3 +178,4 @@ Contributions and improvements to the library are welcome! For instructions on c
 * This library is built based on the excellent [International Telephone Input](https://github.com/Bluefieldscom/intl-tel-input.git), the authors of which deserve any credit you might like to give (though none of the blame)
 * Flag images and CSS from [Flag Sprites](http://flag-sprites.com) (which uses [FamFamFam](https://github.com/tkrotoff/famfamfam_flags))
 * Original country data from mledoze's [World countries in JSON, CSV and XML](https://github.com/mledoze/countries)
+* Orginal project from mrmarkfrench https://github.com/mrmarkfrench/country-select-js thanks for his work.

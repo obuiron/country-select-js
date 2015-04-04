@@ -11,6 +11,10 @@ body {
 .hide {
 	display: none; }
 
+.rof {
+	background-color:rgba(0,0,0,0.100);
+}
+
 pre {
 	margin: 0 !important;
 	display: inline-block; }
@@ -35,8 +39,8 @@ input, button {
 	font-family: inherit;
 	font-size: 100%;
 	color: inherit; }
-	input[disabled], button[disabled] {
-		background-color: #eee; }
+input[disabled], button[disabled] {
+	background-color: #eee; }
 
 input, select {
 	border: 1px solid #CCC;
@@ -57,10 +61,10 @@ button {
 	color: #FFF;
 	background-color: #428BCA;
 	border: 1px solid #357EBD; }
-	button:hover {
-		background-color: #3276B1;
-		border-color: #285E8E;
-		cursor: pointer; }
+button:hover {
+	background-color: #3276B1;
+	border-color: #285E8E;
+	cursor: pointer; }
 
 #result {
 	margin-bottom: 100px; }

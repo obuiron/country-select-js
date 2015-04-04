@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Country Select JS</title>
+    <link rel="stylesheet" href="plugin/css/countrySelect.min.css">
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+<h1>Country Select JS</h1>
+
+<form>
+    <div class="form-item">
+        <input id="country_selector" type="text" placeholder="Select a country">
+    </div>
+    <div class="form-item" type="text">
+        <input class="rof" type="text" id="country_selector_code" name="country_iso2" readonly="readonly"
+               placeholder="Selected country code (2 char)"/>
+    </div>
+    <div class="form-item" type="text">
+        <input class="rof" type="text" id="country_selector_long_code" name="country_iso3" readonly="readonly"
+               placeholder="Selected country code (3 char)"/>
+    </div>
+    <button type="submit" style="display:none;">Submit</button>
+</form>
+
+<!-- Load jQuery from CDN so can run demo immediately -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="plugin/js/countrySelect.min.js"></script>
+<script>
+    $("#country_selector").countrySelect({
+        preferredCountries: ['fr', 'de', 'gb']
+    });
+</script>
+</body>
+</html>
